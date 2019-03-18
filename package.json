@@ -1,0 +1,25 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rumesh/dev.git"
+  },
+  "author": "Rumesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rumesh/dev/issues"
+  },
+  "homepage": "https://github.com/rumesh/dev#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "serve-index": "^1.9.1"
+  }
+}
