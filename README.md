@@ -6,7 +6,7 @@ Help to save all console.log in a distant server, to help to debug inapp webview
 `npm i`
 
 # Start
-`node index.js`
+`npm start`
 
 # Usage
 - Localhost
