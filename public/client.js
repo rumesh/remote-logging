@@ -5,10 +5,19 @@ class ClientLogger {
         let url = new URL(document.currentScript.src);
         this.loggerURL = `${url.origin}/logger`;
         this._originalConsoleLog = console.log;
+        this._sessionID = this._getSessionID();
         console.log = this.customLogger.bind(this);
         setInterval(() => {
             this.log();
         }, 5000);
+    }
+
+    _getSessionID() {
+        // Code from https://gist.github.com/gordonbrander/2230317
+        // Math.random should be unique because of its seeding algorithm.
+        // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+        // after the decimal.
+        return Math.random().toString(36).substr(2, 9);
     }
 
     customLogger() {
@@ -30,7 +39,10 @@ class ClientLogger {
         if (this.data.length === 0) {
             return;
         }
-        let data = {data: [].concat(this.data)};
+        let data = {
+            data: [].concat(this.data),
+            session: this._sessionID
+        };
         this.data = [];
         let postData = {
             method: 'POST',

@@ -11,9 +11,9 @@ const writeFile = util.promisify(fs.writeFile);
 const PORT=3337
 
 
-const getFileName = () => {
+const getFileName = (session) => {
     let date = new Date();
-    return `log/${date.toISOString().replace(/:|\./g, '-')}.txt`;
+    return `log/${session}-${date.toISOString().replace(/:|\./g, '-')}.txt`;
 };
 
 const app = express();
@@ -38,7 +38,7 @@ app.post('/logger', function(req, res) {
         res.send('NODATA');
         return;
     }
-    writeFile(getFileName(), data.join('\n'))
+    writeFile(getFileName(req.body.session), data.join('\n'))
     .then(() => {
         res.send('LOGGED');
     })
