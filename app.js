@@ -23,7 +23,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use('/log', express.static('log'), serveIndex('log', {
-    'icons': true
+    'icons': true,
+    'view': 'details'
 }));
 app.use(express.static('public'));
 // health check url
