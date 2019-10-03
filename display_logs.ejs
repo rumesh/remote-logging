@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title><%- logFile %></title>
+        <style>
+            body {
+                font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+                background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+                background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+                background-repeat: no-repeat;
+                color: #555;
+                -webkit-font-smoothing: antialiased;
+            }
+            p {
+                border-bottom: 1px dashed #efefef;
+                margin: 0;
+                padding-block-start: 1em;
+                padding-block-end: 1em;
+                padding-inline-start: 5px;
+                padding-inline-end: 5px;
+            }
+            p:hover {
+                background-color: #EBE8E8;
+            }
+        </style>
+    </head>
+    <body>
+        <% for(var i = 0; i < logs.length; i++) {
+            var log = logs[i];%>
+            <p>
+                <% for(var j = 0; j < log.length; j++) {
+                    var message = log[j];%>
+                <span style="<%= message.style ? message.style : "" %>"><%= message.label ? message.label : message %></span>
+                <% } %>
+            </p>
+        <% } %>
+    </body>
+</html>
