@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "minify": "node_modules/minify/bin/minify.js public/client.js > public/client.min.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "ejs": "^2.7.1",
     "express": "^4.16.4",
     "serve-index": "^1.9.1"
+  },
+  "devDependencies": {
+    "minify": "^4.1.3"
   }
 }

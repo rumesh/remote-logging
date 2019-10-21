@@ -7,6 +7,11 @@ Remote logging helps to save all console.log in a distant server, to help to deb
 # Start
 `npm start`
 
+# Build
+If any change on `Client.js` generate the minified version with
+
+`npm run minify`
+
 # Usage
 - Localhost
   Add `<script src='http://localhost:3337/client.js'></script>` to you webpage
