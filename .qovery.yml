@@ -1,0 +1,14 @@
+---
+application:
+  name: "remote-logging"
+  project: "remote-logging"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-remote-logging"
+  custom_domains:
+    - branch: master
+      domain: remote-logging.rumesh.tech
+  routes:
+  - application_name: "remote-logging"
+    paths:
+    - "/*"
