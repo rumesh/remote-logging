@@ -1,0 +1,11 @@
+---
+application:
+  name: "remote-logging"
+  project: "remote-logging"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-remote-logging"
+  routes:
+  - application_name: "remote-logging"
+    paths:
+    - "/*"
