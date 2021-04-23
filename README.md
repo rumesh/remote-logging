@@ -12,6 +12,9 @@ If any change on `Client.js` generate the minified version with
 
 `npm run minify`
 
+# Docker
+run `make run`
+
 # Usage
 - Localhost
   Add `<script src='http://localhost:3337/client.js'></script>` to you webpage
@@ -19,6 +22,11 @@ If any change on `Client.js` generate the minified version with
   Log are send every 5 seconds to server if have any log
 
 - YOUR SERVER
-  Add `<script src='{YOUR_SERVER}/client.js'></script>` to you webpage
+  Add `<script src='{YOUR_SERVER}/client.min.js'></script>` to you webpage
   then go to `{YOUR_SERVER}/log/ ` to display your log file.
+  Log are send every 5 seconds to server if have any log
+
+- Hosted version with qovery.com (each time the service is restarted (new version) log will be deleted!)
+  Add `<script src='https://remote-logging.rumesh.tech/client.min.js'></script>` to you webpage
+  then go to `https://remote-logging.rumesh.tech/log/ ` to display your log file.
   Log are send every 5 seconds to server if have any log
